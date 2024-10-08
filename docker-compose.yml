@@ -1,0 +1,13 @@
+version: "3.9"
+
+# vars used in this docker-compose are specified in .env file
+services:
+  database:
+    image: postgres:14.4
+    container_name: notes-db
+    ports:
+      - ${DB_PORT}:5432
+    environment:
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=${DB_DATABASE}
